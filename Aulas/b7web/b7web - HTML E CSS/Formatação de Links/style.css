@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
+a:hover{
+    background-color: yellow;
+    text-transform: uppercase;
+}

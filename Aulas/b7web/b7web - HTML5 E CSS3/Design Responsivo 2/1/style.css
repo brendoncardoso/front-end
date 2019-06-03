@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+}
+h1{
+    margin: 0;
+    text-align: center;
+    color: black;
+
+}
+.topo{
+    width: 100%;
+    height: 100%;
+    line-height: 150px;
+    background-color: yellow;
+}
+.cidade{
+    width: 25%;
+    float: left;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px){
+    .cidade{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 500px){
+    .cidade{
+        width: 100%;
+    }
+}
