@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    background-color: #EEE;
+}
+
+#teste{
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: red;
+}
+
+input {
+    margin-top: 100px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
