@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="script.js" type="text/javascript"></script>
+    <title>Eventos de Formulário</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="enviarForm();">
+        <!-- onchange -->
+        <!-- onfocus -->
+        <!-- onblur -->
+        <!-- onsubmit -->
+        <input type="text" name="nome" onfocus="focarCampo();" onblur="desfocarCampo()"></br><br>
+
+        <select name="cidade" onchange="escolherOpcao(this);">
+            <option selected></option>
+            <option>Rio de Janeiro</option>
+            <option>São Paulo</option>
+            <option>Recife</option>
+            <option>Porto Alegre</option>
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
