@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="assets/js/script.js" type="text/javascript"></script>
     <title>Montando um Portal (1/10)</title>
 </head>
 <body>
@@ -33,13 +34,13 @@
     <div class="topo2">
         <div class="topo2int">
             <div class="logo"></div>
-            <div class="banner"></div>
         </div>
     </div>
 
     <div class="menu">
         <div class="menuint">
-            <ul>
+            <img src="assets/images/arrowdown.png" border="0" width="40" height="40" class="menunmobile" onclick="toggleMenu()">
+            <ul id="menu" style="display: none">
                 <li>
                     <a>Menu 1</a>   
                 </li>
@@ -73,11 +74,141 @@
 
     <div class="container">
         <div class="containerint">
-            <div class="leftside"></div>
+            <div class="leftside">
+                <div class="slideshow" id="slideshow">
+                    <div class="slidebolinhas">
+                        <div class="bolinhas" onclick="mudarSlide(0)"></div>
+                        <div class="bolinhas" onclick="mudarSlide(1)"></div>
+                        <div class="bolinhas" onclick="mudarSlide(2)"></div>
+                        <div class="bolinhas" onclick="mudarSlide(3)"></div>
+                    </div>
+                    <div class="slideshowarea">
+                        <div class="slide" style="background-image:url('http://www.google.com.br/google.jpg');">
+                            <div class="slideinfo">
+                                <div class="slideinfo_titulo">Título para o meu texto 1</div>
+                                <div class="slideinfo_subtitulo">Texto para o meu título 1</div>
+                            </div>
+                        </div>
+
+                        <div class="slide" style="background-image:url('http://www.google.com.br/google.jpg');">
+                            <div class="slideinfo">
+                                <div class="slideinfo_titulo">Título para o meu texto 2</div>
+                                <div class="slideinfo_subtitulo">Texto para o meu título 2</div>
+                            </div>
+                        </div>
+
+                        <div class="slide" style="background-image:url('http://www.google.com.br/google.jpg');">
+                            <div class="slideinfo">
+                                <div class="slideinfo_titulo">Título para o meu texto 3</div>
+                                <div class="slideinfo_subtitulo">Texto para o meu título 3</div>
+                            </div>
+                        </div>
+
+                        <div class="slide" style="background-image:url('http://www.google.com.br/google.jpg');">
+                            <div class="slideinfo">
+                                <div class="slideinfo_titulo">Título para o meu texto 4</div>
+                                <div class="slideinfo_subtitulo">Texto para o meu título 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget_titulo">NOTÍCIAS</div>
+                    <div class="widget_conteudo">
+                        <div class="noticiaarea1">
+                            <div class="noticiaitem noticiabig">
+                                <div class="noticiaimg">
+                                    <img border="0" width="80" height="80" />
+                                </div>
+                                <div class="noticiatitulo">Algum título qualquer Algum título qualquer Algum título qualquer Algum título qualquer</div>
+                                <div class="noticiainfo">500 comentários</div>
+                            </div>
+                        </div>
+                        <div class="noticiaarea2">
+                            <div class="noticiaitem">
+                                <div class="noticiaimg">
+                                    <img border="0" width="80" height="80" />
+                                </div>
+                                <div class="noticiatitulo">Algum título qualquer</div>
+                                <div class="noticiainfo">500 comentários</div>
+                            </div>
+
+                            <div class="noticiaitem">
+                                <div class="noticiaimg">
+                                    <img border="0" width="80" height="80" />
+                                </div>
+                                <div class="noticiatitulo">Algum título qualquer</div>
+                                <div class="noticiainfo">500 comentários</div>
+                            </div>
+
+
+                            <div class="noticiaitem">
+                                <div class="noticiaimg">
+                                    <img border="0" width="80" height="80" />
+                                </div>
+                                <div class="noticiatitulo">Algum título qualquer</div>
+                                <div class="noticiainfo">500 comentários</div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                        <div class="widget_titulo">NOTÍCIAS</div>
+                        <div class="widget_conteudo">
+                            <div class="noticiaarea1">
+                                <div class="noticiaitem noticiabig">
+                                    <div class="noticiaimg">
+                                        <img border="0" width="80" height="80" />
+                                    </div>
+                                    <div class="noticiatitulo">Algum título qualquer Algum título qualquer Algum título qualquer Algum título qualquer</div>
+                                    <div class="noticiainfo">500 comentários</div>
+                                </div>
+                            </div>
+                            <div class="noticiaarea2">
+
+                                <div class="noticiaitem">
+                                    <div class="noticiaimg">
+                                        <img border="0" width="80" height="80" />
+                                    </div>
+                                    <div class="noticiatitulo">Algum título qualquer</div>
+                                    <div class="noticiainfo">500 comentários</div>
+                                </div>
+    
+                                <div class="noticiaitem">
+                                    <div class="noticiaimg">
+                                        <img border="0" width="80" height="80" />
+                                    </div>
+                                    <div class="noticiatitulo">Algum título qualquer</div>
+                                    <div class="noticiainfo">500 comentários</div>
+                                </div>
+    
+    
+                                <div class="noticiaitem">
+                                    <div class="noticiaimg">
+                                        <img border="0" width="80" height="80" />
+                                    </div>
+                                    <div class="noticiatitulo">Algum título qualquer</div>
+                                    <div class="noticiainfo">500 comentários</div>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+
+            </div>
             <div class="rightside">
                 <div class="widget">
                     <div class="widget_titulo">Título</div>
-                    <div class="widget_conteudo">...</div>
+                    <div class="widget_conteudo">
+                        <a href=""><img border="0" width="26" height="26"></a>
+                        <a href=""><img border="0" width="26" height="26"></a>
+                        <a href=""><img border="0" width="26" height="26"></a>
+                        <a href=""><img border="0" width="26" height="26"></a>
+                        <a href=""><img border="0" width="26" height="26"></a>
+                    </div>
                 </div>
 
                 <div class="widget">
@@ -106,7 +237,9 @@
 
                 <div class="widget">
                     <div class="widget_titulo">Publicidade</div>
-                    <div class="widget_conteudo">Imagem</div>
+                    <div class="widget_conteudo">
+                        <a href=""><img border="0" src="assets/images/google.jpg" width="250"></a>
+                    </div>
                 </div>
 
                 <div class="widget">
