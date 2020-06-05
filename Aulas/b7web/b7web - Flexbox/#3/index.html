@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 3</title>
+    <style>
+        .container{
+            display: flex;
+            height: 800px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: blue;
+            align-content: space-around;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container div{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .div10{
+            /*align-self: flex-end;*/
+            /*order: -2;*/
+        }
+
+        .div12{
+            /*align-self: flex-end;*/
+            /*order: -3;*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div class="div10">10</div>
+        <div>11</div>
+        <div class="div12">12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+    </div>
+</body>
+</html>
