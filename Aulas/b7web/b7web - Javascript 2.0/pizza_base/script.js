@@ -107,34 +107,51 @@ document.querySelector('.pizzaInfo--addButton').addEventListener('click', (e) =>
 });
 
 function abrirCart(){
-    document.querySelector('aside').classList.add('show');
-    document.querySelector('.cart').innerHTML = '';
-   
-    
-    for(let i in cart){
-        let arrayCart = pizzaJson.find((item) => {
-            return item.id == cart[i].id;
-        });        
+    if(cart.length){
+        document.querySelector('aside').classList.add('show');
+        document.querySelector('.cart').innerHTML = '';
 
-        switch(parseInt(cart[i].tamanho)) {
-            case 0:
-                pizzaTamanho = "P";
-              break;
-            case 1:
-                pizzaTamanho = "M";
-              break;
-            case 2:
-                pizzaTamanho = "G";
-              break;
-            default:
-          }
-        document.querySelector('.cart--item img').src = arrayCart.img;
-        document.querySelector('.cart--item-nome').innerHTML = `${arrayCart.name} (${pizzaTamanho})`;       
-        document.querySelector('.cart--item--qt').innerHTML = cart[i].qt;
+        for(let i in cart){
+            let cartItem = document.querySelector('.models .cart--item').cloneNode(true); 
 
-        let cartItem = document.querySelector('.models .cart--item').cloneNode(true); 
-        document.querySelector('.cart').append(cartItem);
+            let arrayCart = pizzaJson.find((item) => {
+                return item.id == cart[i].id;
+            });        
 
-    };
+            switch(parseInt(cart[i].tamanho)) {
+                case 0:
+                    pizzaTamanho = "P";
+                break;
+                case 1:
+                    pizzaTamanho = "M";
+                break;
+                case 2:
+                    pizzaTamanho = "G";
+                break;
+                default:
+            }
+            cartItem.querySelector('.cart--item img').src = arrayCart.img;
+            cartItem.querySelector('.cart--item-nome').innerHTML = `${arrayCart.name} (${pizzaTamanho})`;       
+            cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qt;
+            document.querySelector('.cart--details .subtotal span:last-child').innerHTML = `R$ ${arrayCart.price}`;
+
+            cartItem.querySelector('.cart--item-qtmais').addEventListener('click', function(){
+                cart[i].qt++;
+                abrirCart();
+            });
+
+            cartItem.querySelector('.cart--item-qtmenos').addEventListener('click', function(){
+                if(cart[i].qt > 1){
+                    cart[i].qt--;
+                }else{
+                    cart.splice(i, 1);
+                }
+                abrirCart();
+            });
+
+            document.querySelector('.cart').append(cartItem);
+        };    
+    }else{
+        document.querySelector('aside').classList.remove('show');
+    }
 }
-
