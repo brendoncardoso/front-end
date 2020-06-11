@@ -91,7 +91,6 @@ document.querySelector('.pizzaInfo--addButton').addEventListener('click', (e) =>
         return item.identifier == identifier;
     }));
 
-
     if(key > -1){
         cart[key].qt += sizes;
     }else{
@@ -106,10 +105,25 @@ document.querySelector('.pizzaInfo--addButton').addEventListener('click', (e) =>
     abrirCart();
 });
 
+document.querySelector('.menu-openner').addEventListener('click', function() {
+    if(cart.length > 0){
+        document.querySelector('aside').style.left = '0';
+    }
+});
+
+document.querySelector('.menu-closer').addEventListener('click', function(){
+    document.querySelector('aside').style.left = '100vw';
+});
+
 function abrirCart(){
+    document.querySelector('.menu-openner span:first-child').innerHTML = cart.length;
     if(cart.length){
         document.querySelector('aside').classList.add('show');
         document.querySelector('.cart').innerHTML = '';
+
+        let soma = 0;
+        let desconto = 0;
+        let subtotal = 0;
 
         for(let i in cart){
             let cartItem = document.querySelector('.models .cart--item').cloneNode(true); 
@@ -118,6 +132,8 @@ function abrirCart(){
                 return item.id == cart[i].id;
             });        
 
+            soma += arrayCart.price * cart[i].qt;
+                       
             switch(parseInt(cart[i].tamanho)) {
                 case 0:
                     pizzaTamanho = "P";
@@ -151,7 +167,15 @@ function abrirCart(){
 
             document.querySelector('.cart').append(cartItem);
         };    
+
+        desconto = soma * 0.1;
+        subtotal = soma - desconto.toFixed(2);
+
+        document.querySelector('.subtotal span:last-child').innerHTML = `R$ ${soma.toFixed(2)}`;
+        document.querySelector('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`;
+        document.querySelector('.total span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`;
     }else{
         document.querySelector('aside').classList.remove('show');
+        document.querySelector('aside').style.left = '100vw';
     }
 }
